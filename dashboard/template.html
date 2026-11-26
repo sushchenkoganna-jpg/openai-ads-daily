@@ -35,7 +35,6 @@ tr.tot td{font-weight:600}.note{background:var(--warn);padding:6px 10px;border-r
 <div class="bar">
   <label>З <input type="date" id="d1"></label><label>по <input type="date" id="d2"></label>
   <select id="fc"><option value="">Усі кампанії</option></select>
-  <select id="fk"><option value="">Усі країни</option></select>
   <span class="sub" id="cmp"></span>
 </div>
 <div class="kpis" id="kpis"></div>
@@ -43,7 +42,7 @@ tr.tot td{font-weight:600}.note{background:var(--warn);padding:6px 10px;border-r
 <div class="card"><h2>Витрати і конверсії по днях <span class="lg"><span><i style="background:var(--acc)"></i>Spend</span><span><i style="background:var(--acc2)"></i>Conversions</span></span></h2><div id="ch1"></div></div>
 <div class="card"><h2>CPA, ковзне 7 днів</h2><div id="ch2"></div></div>
 <div class="card"><h2>Кампанії <button data-t="tc">CSV</button></h2><div class="tw" id="tc"></div></div>
-<div class="card"><h2>Країни <button data-t="tk">CSV</button></h2><div class="tw" id="tk"></div></div>
+<div class="card"><h2>Конверсії по країнах <button data-t="tk">CSV</button></h2><div class="sub">OpenAI віддає по країнах лише конверсії; spend і кліки по країнах API не розбиває.</div><div class="tw" id="tk"></div></div>
 </main>
 <script>
 const D=/*__DATA__*/null;
@@ -54,12 +53,11 @@ const pct=v=>v==null||!isFinite(v)?"—":fmt(v*100,2)+"%";
 const addD=(s,n)=>{const d=new Date(s+"T00:00:00Z");d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)};
 const span=(a,b)=>Math.round((new Date(b)-new Date(a))/864e5)+1;
 const dates=[...new Set(D.c.map(r=>r[0]))].sort();const LAST=D.meta.last_day||dates[dates.length-1];const FIRST=dates[0];
-let st={d1:addD(LAST,-6),d2:LAST,c:"",k:"",sort:{tc:["spend",-1],tk:["spend",-1]},p:"7"};
+let st={d1:addD(LAST,-6),d2:LAST,c:"",sort:{tc:["spend",-1],tk:["spend",-1]},p:"7"};
 const M=["imp","clk","spend","conv"];
 function src(){ // rows [date, camp, ctry|null, imp, clk, spend, conv] after filters
-  const c=st.c===""?null:+st.c,k=st.k===""?null:+st.k;
-  if(k==null) return D.c.filter(r=>c==null||r[1]===c).map(r=>[r[0],r[1],null,r[2],r[3],r[4],r[5]]);
-  return D.k.filter(r=>r[2]===k&&(c==null||r[1]===c));
+  const c=st.c===""?null:+st.c;
+  return D.c.filter(r=>c==null||r[1]===c).map(r=>[r[0],r[1],null,r[2],r[3],r[4],r[5]]);
 }
 const z=()=>({imp:0,clk:0,spend:0,conv:0});
 function add(o,r){o.imp+=r[3];o.clk+=r[4];o.spend+=r[5];o.conv+=r[6];return o}
@@ -77,7 +75,7 @@ function render(){
   $("cmp").textContent=`порівняння з ${p1} – ${p2}`;
   $("note").style.display=st.d2>=addD(LAST,-1)?"":"none";
   $("note").textContent=`Останні 2 дні (${addD(LAST,-1)}, ${LAST}) неповні: конверсії і spend OpenAI ще дорахує, щоденне оновлення перезаписує 7 днів.`;
-  charts(rows);table("tc",rows,1,D.camps,p1,p2);table("tk",rows.length&&st.k===""?D.k.filter(r=>st.c===""||r[1]===+st.c):rows,2,D.ctry,p1,p2);
+  charts(rows);table("tc",rows,1,D.camps,p1,p2);ctable(p1,p2);
 }
 function charts(rows){
   const end=st.d2,start=span(st.d1,st.d2)>=60?st.d1:addD(end,-59),days=[];for(let d=start;d<=end;d=addD(d,1))days.push(d);
@@ -116,8 +114,18 @@ function table(id,rows,ix,names,p1,p2){
     list.map(r=>`<tr><td>${r.name}</td>${COLS.map(c=>`<td>${cell(r,c)}</td>`).join("")}</tr>`).join("")+"</table>";
   $(id).querySelectorAll("th").forEach(th=>th.onclick=()=>{const k=th.dataset.k;st.sort[id]=[k,st.sort[id][0]===k?-st.sort[id][1]:-1];render()});
 }
+function ctable(p1,p2){
+  const g={};for(const r of D.k){if(st.c!==""&&r[1]!==+st.c)continue;const o=g[r[2]]||(g[r[2]]={a:0,b:0});
+    if(r[0]>=st.d1&&r[0]<=st.d2)o.a+=r[3];else if(r[0]>=p1&&r[0]<=p2)o.b+=r[3]}
+  const tot=Object.values(g).reduce((s,o)=>s+o.a,0);
+  const list=Object.entries(g).map(([k,o])=>({name:D.ctry[k],conv:o.a,share:tot?o.a/tot:null,dconv:o.b?o.a/o.b-1:null,prev:o.b})).filter(r=>r.conv||r.prev).sort((x,y)=>y.conv-x.conv);
+  TBL.tk=list;
+  const dl=v=>v==null?"—":`<span class="d ${Math.abs(v)<.005?"":v>0?"up":"dn"}">${v>0?"+":""}${fmt(v*100,1)}%</span>`;
+  $("tk").innerHTML=`<table><tr><th>Країна</th><th>Conv</th><th>Частка</th><th>Попередній період</th><th>Δ conv</th></tr><tr class="tot"><td>Разом</td><td>${fmt(tot,1)}</td><td></td><td>${fmt(list.reduce((s,r)=>s+r.prev,0),1)}</td><td></td></tr>`+
+    list.map(r=>`<tr><td>${r.name}</td><td>${fmt(r.conv,1)}</td><td>${pct(r.share)}</td><td>${fmt(r.prev,1)}</td><td>${dl(r.dconv)}</td></tr>`).join("")+"</table>";
+}
 document.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{const id=b.dataset.t,l=TBL[id]||[];
-  const h=["name","spend","conv","cpa","clk","ctr","cpc","cvr","imp","dspend","dconv","dcpa"];
+  const h=id==="tk"?["name","conv","share","prev","dconv"]:["name","spend","conv","cpa","clk","ctr","cpc","cvr","imp","dspend","dconv","dcpa"];
   const csv=[h.join(",")].concat(l.map(r=>h.map(k=>k==="name"?`"${String(r.name).replace(/"/g,'""')}"`:(r[k]??"")).join(","))).join("\n");
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));a.download=`openai_ads_${id==="tc"?"campaigns":"countries"}_${st.d1}_${st.d2}.csv`;a.click()});
 const PER=[["1","Вчора"],["7","7 днів"],["14","14 днів"],["28","28 днів"],["mtd","Місяць"],["all","Весь час"]];
@@ -127,8 +135,6 @@ function sync(){$("d1").value=st.d1;$("d2").value=st.d2;document.querySelectorAl
 document.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>setP(b.dataset.p));
 $("d1").onchange=e=>{st.d1=e.target.value;st.p="";sync()};$("d2").onchange=e=>{st.d2=e.target.value;st.p="";sync()};
 $("fc").innerHTML+=D.camps.map((n,i)=>`<option value="${i}">${n}</option>`).join("");$("fc").onchange=e=>{st.c=e.target.value;render()};
-$("fk").innerHTML+=D.ctry.map((n,i)=>`<option value="${i}">${n}</option>`).join("");$("fk").onchange=e=>{st.k=e.target.value;render()};
-$("fk").disabled=!D.ctry.length;
 $("sub").textContent=`Дані по ${LAST} · оновлено ${(D.meta.pulled_at||"").replace("T"," ").slice(0,16)} UTC · таймзона ${D.meta.timezone||"—"} · атрибуція ${D.meta.attribution||"—"} · Conversions = тріали`;
 setP("7");
 </script>

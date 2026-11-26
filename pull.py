@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """OpenAI Ads -> data/campaign_daily.csv + data/country_daily.csv (stdlib only).
 
-Two API calls per run (campaign x day, campaign x day x country) over the last --days days (default 7: spend and
+Two API calls per run (insights campaign x day; conversions/insights campaign x day x country) over the last --days days (default 7: spend and
 conversions are restated for a few days). Rows for those days are replaced, older rows are kept.
 
   OPENAI_ADS_API_KEY=... python3 pull.py               # daily: last 7 complete days
@@ -16,7 +16,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
 MET = ["impressions", "clicks", "spend", "conversions"]
 CAMP_COLS = ["date", "campaign_id", "campaign"] + MET
-CTRY_COLS = ["date", "campaign_id", "campaign", "country"] + MET
+CTRY_COLS = ["date", "campaign_id", "campaign", "country", "conversions"]
 ATTR = {"attribution_window_days": "30", "view_through_attribution_window_days": "1"}
 
 
@@ -95,19 +95,6 @@ def campaign_daily(key, since, until, tz):
              "campaign": get(r, "campaign_name") or "", **{m: num(get(r, m)) for m in MET}} for r in rows]
 
 
-def country_delivery(key, since, until, tz):
-    """Segmented report: delivery only (no conversions), entity-prefixed fields."""
-    rows = paged("/ad_account/insights", {"aggregation_level": "campaign", "time_granularity": "daily",
-                 "time_ranges[]": tr(since, until, tz), "segments[]": "country", **ATTR,
-                 "fields[]": ["campaign.id", "campaign.name", "metadata.readable_time", "country.name",
-                              "campaign.impressions", "campaign.clicks", "campaign.spend"]}, key)
-    sample("country", rows)
-    return [{"date": str(get(r, "metadata.readable_time", "readable_time"))[:10],
-             "campaign_id": str(get(r, "campaign.id", "campaign_id") or ""), "campaign": get(r, "campaign.name", "campaign_name") or "",
-             "country": get(r, "country.name", "country.code", "country") or "??",
-             **{m: num(get(r, f"campaign.{m}", f"country.{m}", m)) for m in ("impressions", "clicks", "spend")}} for r in rows]
-
-
 def country_conversions(key, since, until, tz, ids):
     """POST /conversions/insights, breakdown=country, 2000-row cap per response -> split dates on 413."""
     z = ZoneInfo(tz)
@@ -145,7 +132,7 @@ def upsert(path, cols, new, since, until):
     if os.path.exists(path):
         with open(path, newline="") as f: old = [r for r in csv.DictReader(f) if not (since <= r["date"] <= until)]
     rows = old + [{c: r.get(c, "") for c in cols} for r in new]
-    rows = [r for r in rows if any(num(r[m]) for m in MET)]          # zero rows add nothing to sums
+    rows = [r for r in rows if any(num(r.get(m)) for m in MET)]          # zero rows add nothing to sums
     rows.sort(key=lambda r: tuple(str(r[c]) for c in cols[:4]))
     with open(path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols); w.writeheader(); w.writerows(rows)
@@ -171,17 +158,12 @@ def main():
     while s <= u:                                  # non-hourly ranges: <= 365 days per request
         e = min(u, s + dt.timedelta(days=364))
         c = campaign_daily(key, str(s), str(e), tz); camp += c
-        dl = country_delivery(key, str(s), str(e), tz)
         ids = sorted({r["campaign_id"] for r in c if r["campaign_id"]})
-        cv = country_conversions(key, str(s), str(e), tz, ids) if ids else []
         names = {r["campaign_id"]: r["campaign"] for r in c}
-        g = {}
-        for r in dl + [dict(x, impressions=0, clicks=0, spend=0) for x in cv]:
-            k = (r["date"], r["campaign_id"], r["country"])
-            o = g.setdefault(k, {"date": k[0], "campaign_id": k[1], "country": k[2], "campaign": names.get(k[1], r.get("campaign", "")),
-                                 **{m: 0.0 for m in MET}})
-            for m in MET: o[m] += r.get(m, 0)
-        ctry += g.values()
+        # Segmented delivery (segments[]=country) returns campaign-level numbers repeated per country, so by country
+        # only conversions are reported, from /conversions/insights.
+        for r in (country_conversions(key, str(s), str(e), tz, ids) if ids else []):
+            ctry.append({**r, "campaign": names.get(r["campaign_id"], ""), "impressions": 0, "clicks": 0, "spend": 0})
         s = e + dt.timedelta(days=1)
     n1 = upsert(os.path.join(DATA, "campaign_daily.csv"), CAMP_COLS, camp, since, until)
     n2 = upsert(os.path.join(DATA, "country_daily.csv"), CTRY_COLS, ctry, since, until)

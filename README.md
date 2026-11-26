@@ -5,7 +5,7 @@
 
 ```
 GitHub Actions 04:30 UTC
-  pull.py        GET /v1/ad_account/insights: campaign × day, campaign × day × country; останні 7 днів перезаписуються
+  pull.py        GET /v1/ad_account/insights: campaign × day; conversions by country (/conversions/insights); останні 7 днів перезаписуються
   build_dash.py  data/*.csv → dashboard/index.html (дані вбудовані в сторінку)
   sheet.py       data/*.csv → Google Таблиця (вкладки campaign_daily, country_daily)
   commit         Factum віддає dashboard/index.html з репо live
