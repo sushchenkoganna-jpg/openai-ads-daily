@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,20 +41,20 @@ tr.tot td{font-weight:650}.note{background:var(--warn);padding:7px 11px;border-r
 <body><main>
 <h1>OpenAI Ads · pdfFiller</h1><div class="sub" id="sub"></div>
 <div class="bar"><div class="seg" id="per"></div>
-  <label class="sub">з <input type="date" id="d1"></label><label class="sub">по <input type="date" id="d2"></label></div>
+  <label class="sub">from <input type="date" id="d1"></label><label class="sub">to <input type="date" id="d2"></label></div>
 <div class="bar"><div class="seg" id="typ"></div>
   <select id="fc"></select><span class="sub" id="cmp"></span></div>
 <div id="body">
 <div class="kpis" id="kpis"></div>
 <div class="note" id="note"></div>
-<div class="card"><h2>Форми vs Функції</h2><div class="tw" id="tt"></div></div>
+<div class="card"><h2>Forms vs Functions</h2><div class="tw" id="tt"></div></div>
 <div class="grid2">
-  <div class="card"><h2>Витрати по днях <span class="lg" id="lg1"></span></h2><div id="ch1"></div></div>
-  <div class="card"><h2>Конверсії по днях <span class="lg" id="lg2"></span></h2><div id="ch2"></div></div>
+  <div class="card"><h2>Daily spend <span class="lg" id="lg1"></span></h2><div id="ch1"></div></div>
+  <div class="card"><h2>Daily conversions <span class="lg" id="lg2"></span></h2><div id="ch2"></div></div>
 </div>
-<div class="card"><h2>CPA, ковзне 7 днів <span class="lg" id="lg3"></span></h2><div id="ch3"></div></div>
-<div class="card"><h2>Кампанії <button data-t="tc">CSV</button></h2><div class="tw" id="tc"></div></div>
-<div class="card"><h2>Конверсії по країнах <button data-t="tk">CSV</button></h2><div class="sub" style="margin:-4px 0 8px">OpenAI віддає по країнах лише конверсії; spend і кліки по країнах API не розбиває.</div><div class="tw" id="tk"></div></div>
+<div class="card"><h2>CPA, rolling 7 days <span class="lg" id="lg3"></span></h2><div id="ch3"></div></div>
+<div class="card"><h2>Campaigns <button data-t="tc">CSV</button></h2><div class="tw" id="tc"></div></div>
+<div class="card"><h2>Conversions by country <button data-t="tk">CSV</button></h2><div class="sub" style="margin:-4px 0 8px">OpenAI reports only conversions by country; the API does not split spend or clicks by country.</div><div class="tw" id="tk"></div></div>
 </div>
 </main>
 <script>
@@ -62,14 +62,14 @@ let D={"meta":{"pulled_at":"2026-11-26T16:27:28+00:00","timezone":"America/Los_A
 (async()=>{
 const $=s=>document.getElementById(s);
 if(!D){try{D=await (await fetch('/__fn/data')).json()}catch(e){D={error:String(e)}}}
-if(!D||D.error||!D.c){$("body").innerHTML=`<div class="err">Не вдалося завантажити дані: ${D&&(D.error+" "+(D.detail||""))}</div>`;return}
-const fmt=(v,d=0)=>v==null||!isFinite(v)?"—":v.toLocaleString("uk-UA",{minimumFractionDigits:d,maximumFractionDigits:d});
+if(!D||D.error||!D.c){$("body").innerHTML=`<div class="err">Could not load data: ${D&&(D.error+" "+(D.detail||""))}</div>`;return}
+const fmt=(v,d=0)=>v==null||!isFinite(v)?"—":v.toLocaleString("en-US",{minimumFractionDigits:d,maximumFractionDigits:d});
 const usd=v=>v==null||!isFinite(v)?"—":"$"+fmt(v,Math.abs(v)<100?2:0);
 const pct=v=>v==null||!isFinite(v)?"—":fmt(v*100,v<.1?2:1)+"%";
 const addD=(s,n)=>{const d=new Date(s+"T00:00:00Z");d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)};
 const span=(a,b)=>Math.round((new Date(b)-new Date(a))/864e5)+1;
-const TYPES=["Форми","Функції","Інше"],TC={"Форми":"var(--forms)","Функції":"var(--func)","Інше":"var(--oth)"};
-const typeOf=n=>/function/i.test(n)?"Функції":/form/i.test(n)?"Форми":"Інше";
+const TYPES=["Forms","Functions","Other"],TC={"Forms":"var(--forms)","Functions":"var(--func)","Other":"var(--oth)"};
+const typeOf=n=>/function/i.test(n)?"Functions":/form/i.test(n)?"Forms":"Other";
 const CT=D.camps.map(typeOf);const usedTypes=TYPES.filter(t=>CT.includes(t));
 const dates=[...new Set(D.c.map(r=>r[0]))].sort();const LAST=D.meta.last_day||dates[dates.length-1];const FIRST=dates[0];
 const st={d1:addD(LAST,-6),d2:LAST,t:"",c:"",sort:["spend",-1],p:"7"};
@@ -81,7 +81,7 @@ const inA=d=>d>=st.d1&&d<=st.d2;
 function prev(){const n=span(st.d1,st.d2);return[addD(st.d1,-n),addD(st.d1,-1)]}
 function dl(a,b,lowGood){if(a==null||b==null||!b)return'<span class="d sub">—</span>';const x=a/b-1;const good=lowGood?x<0:x>0;
   return `<span class="d ${lowGood===2||Math.abs(x)<.005?"":good?"up":"dn"}">${x>0?"+":""}${fmt(x*100,1)}%</span>`}
-const KP=[["spend","Spend",usd,2,1],["conv","Conversions (тріали)",v=>fmt(v,v%1?1:0),0,1],["cpa","CPA",usd,1,1],["cvr","CVR клік→тріал",pct,0,1],
+const KP=[["spend","Spend",usd,2,1],["conv","Conversions (trials)",v=>fmt(v,v%1?1:0),0,1],["cpa","CPA",usd,1,1],["cvr","CVR click→trial",pct,0,1],
   ["clk","Clicks",v=>fmt(v),0],["cpc","CPC",usd,1],["ctr","CTR",pct,0],["imp","Impressions",v=>fmt(v),0]];
 function agg(p1,p2){const A=z(),B=z(),T={},C={};
   for(const r of D.c){if(!keep(r[1]))continue;const a=inA(r[0]),b=r[0]>=p1&&r[0]<=p2;if(!a&&!b)continue;
@@ -90,10 +90,10 @@ function agg(p1,p2){const A=z(),B=z(),T={},C={};
   return{A:der(A),B:der(B),T,C}}
 function render(){
   const[p1,p2]=prev(),g=agg(p1,p2);
-  $("kpis").innerHTML=KP.map(([k,l,f,lg,m])=>`<div class="kpi${m?" main":""}"><div class="l">${l}</div><div class="v">${f(g.A[k])}</div><div>${dl(g.A[k],g.B[k],lg)} <span class="sub">було ${f(g.B[k])}</span></div></div>`).join("");
+  $("kpis").innerHTML=KP.map(([k,l,f,lg,m])=>`<div class="kpi${m?" main":""}"><div class="l">${l}</div><div class="v">${f(g.A[k])}</div><div>${dl(g.A[k],g.B[k],lg)} <span class="sub">prev ${f(g.B[k])}</span></div></div>`).join("");
   $("cmp").textContent=`${st.d1} – ${st.d2} vs ${p1} – ${p2}`;
   $("note").style.display=st.d2>=addD(LAST,-1)?"":"none";
-  $("note").textContent=`${addD(LAST,-1)} і ${LAST} ще дозрівають: OpenAI дораховує конверсії до 30 днів після кліку, щоденне оновлення перезаписує останні 7 днів.`;
+  $("note").textContent=`${addD(LAST,-1)} and ${LAST} are still maturing: OpenAI attributes conversions up to 30 days after the click; each daily update rewrites the last 7 days.`;
   types(g);charts();camps(g);countries(p1,p2);
 }
 function types(g){
@@ -102,8 +102,8 @@ function types(g){
   const row=(name,a,b,share,col)=>`<tr${col?"":' class="tot"'}><td>${col?`<span class="tag" style="background:${col}">&nbsp;</span>`:""}${name}</td><td>${usd(a.spend)}</td>
     <td>${share==null?"":`<div style="display:flex;gap:6px;align-items:center;justify-content:flex-end">${pct(share)}<div class="bar2"><b style="width:${share*100}%;background:${col}"></b></div></div>`}</td>
     <td>${dl(a.spend,b.spend,2)}</td><td>${n(a.conv)}</td><td>${dl(a.conv,b.conv,0)}</td><td>${usd(a.cpa)}</td><td>${dl(a.cpa,b.cpa,1)}</td><td>${pct(a.ctr)}</td><td>${pct(a.cvr)}</td><td>${usd(a.cpc)}</td></tr>`;
-  $("tt").innerHTML=`<table><tr><th>Тип</th><th>Spend</th><th>Частка spend</th><th>Δ spend</th><th>Conv</th><th>Δ conv</th><th>CPA</th><th>Δ CPA</th><th>CTR</th><th>CVR</th><th>CPC</th></tr>`+
-    rows.map(({t,a,b})=>row(t,a,b,tot?a.spend/tot:0,TC[t])).join("")+row("Разом",g.A,g.B,null,null)+"</table>";
+  $("tt").innerHTML=`<table><tr><th>Type</th><th>Spend</th><th>Spend share</th><th>Δ spend</th><th>Conv</th><th>Δ conv</th><th>CPA</th><th>Δ CPA</th><th>CTR</th><th>CVR</th><th>CPC</th></tr>`+
+    rows.map(({t,a,b})=>row(t,a,b,tot?a.spend/tot:0,TC[t])).join("")+row("Total",g.A,g.B,null,null)+"</table>";
 }
 function series(){
   const end=st.d2,start=span(st.d1,st.d2)>=45?st.d1:addD(end,-44),days=[];for(let d=start;d<=end;d=addD(d,1))days.push(d);
@@ -125,18 +125,18 @@ function bars(id,lgId,key,f){
 }
 function cpaChart(){
   const S=series(),W=1200,H=240,L=52,R=10,T=10,B=26,w=(W-L-R)/S.days.length,ts=shownTypes();
-  const lines=ts.map(t=>({t,c:TC[t],set:[t]}));if(ts.length>1)lines.push({t:"Разом",c:"var(--fg)",set:ts});
+  const lines=ts.map(t=>({t,c:TC[t],set:[t]}));if(ts.length>1)lines.push({t:"Total",c:"var(--fg)",set:ts});
   const roll=(d,set)=>{let sp=0,cv=0;for(let j=0;j<7;j++)for(const x of set){const v=S.get(addD(d,-j),x);sp+=v.spend;cv+=v.conv}return cv?sp/cv:null};
   const vals=lines.map(l=>S.days.map(d=>roll(d,l.set))),mx=nice(Math.max(1,...vals.flat().filter(v=>v!=null))),y=v=>T+(H-T-B)*(1-v/mx);
   let s=`<svg viewBox="0 0 ${W} ${H}">`+axis(W,H,L,R,T,B,mx,usd);
-  lines.forEach((l,k)=>{const st_=`fill="none" stroke="${l.c}" stroke-width="${l.t==="Разом"?2.5:2}"${l.t==="Разом"?' stroke-dasharray="5 4"':""}`;let seg=[];
+  lines.forEach((l,k)=>{const st_=`fill="none" stroke="${l.c}" stroke-width="${l.t==="Total"?2.5:2}"${l.t==="Total"?' stroke-dasharray="5 4"':""}`;let seg=[];
     const flush=()=>{if(seg.length)s+=`<polyline ${st_} points="${seg.join(" ")}"/>`;seg=[]};
-    vals[k].forEach((v,i)=>{if(v==null)return flush();seg.push(`${L+w*i+w/2},${y(v)}`);s+=`<circle cx="${L+w*i+w/2}" cy="${y(v)}" r="7" fill="transparent"><title>${S.days[i]} · ${l.t}: CPA 7д ${usd(v)}</title></circle>`});flush()});
+    vals[k].forEach((v,i)=>{if(v==null)return flush();seg.push(`${L+w*i+w/2},${y(v)}`);s+=`<circle cx="${L+w*i+w/2}" cy="${y(v)}" r="7" fill="transparent"><title>${S.days[i]} · ${l.t}: CPA 7d ${usd(v)}</title></circle>`});flush()});
   S.days.forEach((d,i)=>{s+=dlab(S,i,Math.ceil(S.days.length/14),W,L,w,H)});
   $("ch3").innerHTML=s+"</svg>";$("lg3").innerHTML=lines.map(l=>`<span><i style="background:${l.c}"></i>${l.t}</span>`).join("");
 }
 function charts(){bars("ch1","lg1","spend",v=>"$"+fmt(v));bars("ch2","lg2","conv",v=>fmt(v));cpaChart()}
-const COLS=[["type","Тип"],["spend","Spend",usd],["dspend","Δ spend",null,2],["conv","Conv",v=>fmt(v,v%1?1:0)],["dconv","Δ conv",null,0],["cpa","CPA",usd],["dcpa","Δ CPA",null,1],
+const COLS=[["type","Type"],["spend","Spend",usd],["dspend","Δ spend",null,2],["conv","Conv",v=>fmt(v,v%1?1:0)],["dconv","Δ conv",null,0],["cpa","CPA",usd],["dcpa","Δ CPA",null,1],
   ["clk","Clicks",v=>fmt(v)],["ctr","CTR",pct],["cpc","CPC",usd],["cvr","CVR",pct],["imp","Impr.",v=>fmt(v)]];
 const TBL={};
 function camps(g){
@@ -144,7 +144,7 @@ function camps(g){
     dspend:b.spend?a.spend/b.spend-1:null,dconv:b.conv?a.conv/b.conv-1:null,dcpa:a.cpa&&b.cpa?a.cpa/b.cpa-1:null,prev:b.spend}}).filter(r=>r.spend||r.conv||r.prev);
   const[sk,sd]=st.sort;list.sort((x,y)=>((x[sk]??-1e18)>(y[sk]??-1e18)?1:-1)*sd);TBL.tc=list;
   const cell=(r,[k,,f,lg])=>k==="type"?`<span class="tag" style="background:${TC[r.type]}">${r.type}</span>`:f?f(r[k]):r[k]==null?'<span class="d sub">—</span>':`<span class="d ${Math.abs(r[k])<.005?"":lg===2?"":(lg?r[k]<0:r[k]>0)?"up":"dn"}">${r[k]>0?"+":""}${fmt(r[k]*100,1)}%</span>`;
-  $("tc").innerHTML=`<table><tr><th data-k="name">Кампанія</th>${COLS.map(c=>`<th data-k="${c[0]}">${c[1]}${sk===c[0]?(sd<0?" ↓":" ↑"):""}</th>`).join("")}</tr>`+
+  $("tc").innerHTML=`<table><tr><th data-k="name">Campaign</th>${COLS.map(c=>`<th data-k="${c[0]}">${c[1]}${sk===c[0]?(sd<0?" ↓":" ↑"):""}</th>`).join("")}</tr>`+
     list.map(r=>`<tr><td>${r.name}</td>${COLS.map(c=>`<td>${cell(r,c)}</td>`).join("")}</tr>`).join("")+"</table>";
   $("tc").querySelectorAll("th").forEach(th=>th.onclick=()=>{const k=th.dataset.k;st.sort=[k,st.sort[0]===k?-st.sort[1]:-1];render()});
 }
@@ -152,25 +152,25 @@ function countries(p1,p2){
   const g={};for(const r of D.k){if(!keep(r[1]))continue;const o=g[r[2]]||(g[r[2]]={a:0,b:0});if(inA(r[0]))o.a+=r[3];else if(r[0]>=p1&&r[0]<=p2)o.b+=r[3]}
   const tot=Object.values(g).reduce((s,o)=>s+o.a,0);
   const list=Object.entries(g).map(([k,o])=>({name:D.ctry[k],conv:o.a,share:tot?o.a/tot:null,prev:o.b})).filter(r=>r.conv||r.prev).sort((x,y)=>y.conv-x.conv||y.prev-x.prev);TBL.tk=list;
-  $("tk").innerHTML=`<table><tr><th>Країна</th><th>Conv</th><th>Частка</th><th>Попередній період</th><th>Δ conv</th></tr><tr class="tot"><td>Разом</td><td>${fmt(tot,tot%1?1:0)}</td><td></td><td>${fmt(list.reduce((s,r)=>s+r.prev,0))}</td><td></td></tr>`+
+  $("tk").innerHTML=`<table><tr><th>Country</th><th>Conv</th><th>Share</th><th>Previous period</th><th>Δ conv</th></tr><tr class="tot"><td>Total</td><td>${fmt(tot,tot%1?1:0)}</td><td></td><td>${fmt(list.reduce((s,r)=>s+r.prev,0))}</td><td></td></tr>`+
     list.map(r=>`<tr><td>${r.name}</td><td>${fmt(r.conv,r.conv%1?1:0)}</td><td>${pct(r.share)}</td><td>${fmt(r.prev)}</td><td>${dl(r.conv,r.prev,0)}</td></tr>`).join("")+"</table>";
 }
 document.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{const id=b.dataset.t,l=TBL[id]||[];
   const h=id==="tk"?["name","conv","share","prev"]:["name","type","spend","conv","cpa","clk","ctr","cpc","cvr","imp","dspend","dconv","dcpa"];
   const csv=[h.join(",")].concat(l.map(r=>h.map(k=>typeof r[k]==="string"?`"${r[k].replace(/"/g,'""')}"`:(r[k]??"")).join(","))).join("\n");
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["﻿"+csv],{type:"text/csv"}));a.download=`openai_ads_${id==="tc"?"campaigns":"countries"}_${st.d1}_${st.d2}.csv`;a.click()});
-const PER=[["1","Вчора"],["7","7 днів"],["14","14 днів"],["28","28 днів"],["mtd","Цей місяць"],["all","Весь час"]];
+const PER=[["1","Yesterday"],["7","7 days"],["14","14 days"],["28","28 days"],["mtd","This month"],["all","All time"]];
 $("per").innerHTML=PER.map(([k,l])=>`<button data-p="${k}">${l}</button>`).join("");
-$("typ").innerHTML=[["","Усі"]].concat(usedTypes.map(t=>[t,t])).map(([k,l])=>`<button data-ty="${k}">${l}</button>`).join("");
+$("typ").innerHTML=[["","All"]].concat(usedTypes.map(t=>[t,t])).map(([k,l])=>`<button data-ty="${k}">${l}</button>`).join("");
 function setP(k){st.p=k;st.d2=LAST;st.d1=k==="mtd"?LAST.slice(0,8)+"01":k==="all"?FIRST:addD(LAST,1-+k);sync()}
-function fillCamps(){$("fc").innerHTML=`<option value="">Усі кампанії${st.t?" · "+st.t:""}</option>`+D.camps.map((n,i)=>[n,i]).filter(([n,i])=>st.t===""||CT[i]===st.t).map(([n,i])=>`<option value="${i}">${n}</option>`).join("");$("fc").value=st.c}
+function fillCamps(){$("fc").innerHTML=`<option value="">All campaigns${st.t?" · "+st.t:""}</option>`+D.camps.map((n,i)=>[n,i]).filter(([n,i])=>st.t===""||CT[i]===st.t).map(([n,i])=>`<option value="${i}">${n}</option>`).join("");$("fc").value=st.c}
 function sync(){$("d1").value=st.d1;$("d2").value=st.d2;document.querySelectorAll("[data-p]").forEach(b=>b.classList.toggle("on",b.dataset.p===st.p));
   document.querySelectorAll("[data-ty]").forEach(b=>b.classList.toggle("on",b.dataset.ty===st.t));render()}
 document.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>setP(b.dataset.p));
 document.querySelectorAll("[data-ty]").forEach(b=>b.onclick=()=>{st.t=b.dataset.ty;if(st.c!==""&&st.t!==""&&CT[+st.c]!==st.t)st.c="";fillCamps();sync()});
 $("d1").onchange=e=>{st.d1=e.target.value;st.p="";sync()};$("d2").onchange=e=>{st.d2=e.target.value;st.p="";sync()};
 $("fc").onchange=e=>{st.c=e.target.value;render()};
-$("sub").textContent=`Дані по ${LAST} · оновлено ${(D.meta.pulled_at||"").replace("T"," ").slice(0,16)} UTC · таймзона акаунта ${D.meta.timezone||"—"} · атрибуція ${D.meta.attribution||"—"}`;
+$("sub").textContent=`Data through ${LAST} · updated ${(D.meta.pulled_at||"").replace("T"," ").slice(0,16)} UTC · account timezone ${D.meta.timezone||"—"} · attribution ${D.meta.attribution||"—"}`;
 fillCamps();setP("7");
 })();
 </script>
