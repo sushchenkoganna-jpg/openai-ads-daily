@@ -1,0 +1,40 @@
+name: OpenAI Ads daily
+# Every day: pull the last 7 days from the OpenAI Ads API, rebuild the dashboard, mirror to Google Sheets, commit.
+# Factum serves dashboard/index.html live from this repository, so the commit is the update.
+on:
+  schedule:
+    - cron: "30 4 * * *"          # 06:30/07:30 Kyiv
+  workflow_dispatch:
+    inputs:
+      since: { description: "Backfill from YYYY-MM-DD (empty = last 7 days)", default: "" }
+  push:
+    branches: [main]
+    paths: ["dashboard/template.html", "build_dash.py"]
+
+concurrency: { group: openai-ads-daily, cancel-in-progress: false }
+permissions: { contents: write }
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pull OpenAI Ads
+        if: github.event_name != 'push'
+        env:
+          OPENAI_ADS_API_KEY: ${{ secrets.OPENAI_ADS_API_KEY }}
+          OPENAI_ADS_TZ: ${{ vars.OPENAI_ADS_TZ }}
+        run: python3 pull.py ${{ github.event.inputs.since && format('--since {0}', github.event.inputs.since) || '' }}
+      - run: python3 build_dash.py
+      - name: Google Sheet
+        if: github.event_name != 'push' && vars.GSHEET_ID != ''
+        env:
+          GSHEET_ID: ${{ vars.GSHEET_ID }}
+          GSHEET_TOKEN_JSON: ${{ secrets.GSHEET_TOKEN_JSON }}
+        run: python3 sheet.py
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add data dashboard/index.html
+          git diff --cached --quiet || { git commit -m "data: $(date -u +%F)"; git push; }
