@@ -228,7 +228,7 @@ date,campaign_id,campaign,impressions,clicks,spend,conversions
 2026-11-20,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],62.0,3.0,0.63,0.0
 2026-11-20,cmpn_2758608e2248819ea97574f6dc285d96,pdfFiller_All_Forms_AU [CPA][Desktop],1.0,0.0,0.0,0.0
 2026-11-20,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],8.0,0.0,0.0,0.0
-2026-11-20,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],44.0,1.0,0.24,0.0
+2026-11-20,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],44.0,1.0,0.24,1.0
 2026-11-20,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],152.0,13.0,5.0,0.0
 2026-11-20,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],741.0,41.0,70.21,1.0
 2026-11-21,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],213.0,3.0,9.21,0.0
@@ -262,12 +262,12 @@ date,campaign_id,campaign,impressions,clicks,spend,conversions
 2026-11-24,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],31.0,1.0,0.08,0.0
 2026-11-24,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],267.0,8.0,3.02,0.0
 2026-11-24,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],300.0,17.0,6.25,0.0
-2026-11-24,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],1553.0,44.0,69.95,2.0
+2026-11-24,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],1553.0,44.0,69.95,1.0
 2026-11-25,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],199.0,7.0,7.77,0.0
-2026-11-25,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],4222.0,103.0,21.82,2.0
+2026-11-25,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],4222.0,103.0,21.82,0.0
 2026-11-25,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],383.0,9.0,3.92,0.0
 2026-11-25,cmpn_2758608e2248819ea97574f6dc285d96,pdfFiller_All_Forms_AU [CPA][Desktop],32.0,0.0,0.0,0.0
 2026-11-25,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],277.0,17.0,19.87,0.0
 2026-11-25,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],561.0,10.0,5.45,0.0
-2026-11-25,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],350.0,16.0,7.83,1.0
-2026-11-25,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],2556.0,87.0,108.36,1.0
+2026-11-25,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],350.0,16.0,7.83,0.0
+2026-11-25,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],2556.0,87.0,108.36,0.0

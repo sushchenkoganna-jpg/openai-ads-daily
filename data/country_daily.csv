@@ -1,13 +1,50 @@
 date,campaign_id,campaign,country,impressions,clicks,spend,conversions
-2026-11-20,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,0.0,0.0,0.0,1.0
-2026-11-20,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,0.0,0.0,0.0,1.0
-2026-11-21,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,0.0,0.0,0.0,1.0
-2026-11-21,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,0.0,0.0,0.0,1.0
-2026-11-21,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,0.0,0.0,0.0,3.0
-2026-11-22,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,0.0,0.0,0.0,1.0
-2026-11-23,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,0.0,0.0,0.0,2.0
-2026-11-24,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,0.0,0.0,0.0,1.0
-2026-11-24,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,0.0,0.0,0.0,2.0
-2026-11-25,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,0.0,0.0,0.0,2.0
-2026-11-25,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,0.0,0.0,0.0,1.0
-2026-11-25,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,0.0,0.0,0.0,1.0
+2026-11-20,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,77.0,6.0,-0.97,0.0
+2026-11-20,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,807.0,17.0,1.57,0.0
+2026-11-20,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,807.0,17.0,1.57,0.0
+2026-11-20,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,60.0,0.0,2.75,0.0
+2026-11-20,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,159.0,12.0,3.68,0.0
+2026-11-20,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,745.0,42.0,71.34,1.0
+2026-11-21,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,215.0,6.0,9.35,0.0
+2026-11-21,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,1413.0,32.0,11.33,0.0
+2026-11-21,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1413.0,32.0,11.33,0.0
+2026-11-21,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,247.0,4.0,-4.03,0.0
+2026-11-21,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,73.0,2.0,-0.23,0.0
+2026-11-21,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,688.0,21.0,12.9,1.0
+2026-11-21,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,332.0,16.0,7.72,1.0
+2026-11-21,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1793.0,68.0,127.49,3.0
+2026-11-22,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,171.0,4.0,10.2,0.0
+2026-11-22,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,6269.0,171.0,63.02,0.0
+2026-11-22,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,6269.0,171.0,63.02,0.0
+2026-11-22,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],LU,6269.0,171.0,63.02,0.0
+2026-11-22,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,135.0,4.0,-4.1,0.0
+2026-11-22,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,78.0,3.0,7.39,0.0
+2026-11-22,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,609.0,20.0,10.86,0.0
+2026-11-22,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,315.0,17.0,8.14,0.0
+2026-11-22,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1774.0,51.0,98.09,1.0
+2026-11-23,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,238.0,3.0,-1.38,0.0
+2026-11-23,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,2175.0,79.0,19.35,0.0
+2026-11-23,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,2175.0,79.0,19.35,0.0
+2026-11-23,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],LU,2175.0,79.0,19.35,0.0
+2026-11-23,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,152.0,4.0,7.7,0.0
+2026-11-23,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,55.0,4.0,-1.96,0.0
+2026-11-23,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,182.0,7.0,3.08,0.0
+2026-11-23,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,312.0,11.0,8.0,0.0
+2026-11-23,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1910.0,64.0,95.71,2.0
+2026-11-24,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,135.0,9.0,23.66,0.0
+2026-11-24,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,1354.0,46.0,10.88,0.0
+2026-11-24,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1354.0,46.0,10.88,0.0
+2026-11-24,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],LU,1354.0,46.0,10.88,0.0
+2026-11-24,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,151.0,4.0,4.54,1.0
+2026-11-24,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,263.0,8.0,0.97,0.0
+2026-11-24,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,300.0,18.0,5.01,0.0
+2026-11-24,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1555.0,43.0,75.25,1.0
+2026-11-25,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,199.0,9.0,9.31,0.0
+2026-11-25,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,4221.0,103.0,21.75,0.0
+2026-11-25,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,4221.0,103.0,21.75,0.0
+2026-11-25,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],LU,4221.0,103.0,21.75,0.0
+2026-11-25,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,382.0,7.0,7.38,0.0
+2026-11-25,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,276.0,17.0,17.84,0.0
+2026-11-25,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,564.0,10.0,5.57,0.0
+2026-11-25,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,349.0,18.0,8.44,0.0
+2026-11-25,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2558.0,81.0,108.27,0.0
