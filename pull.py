@@ -31,7 +31,7 @@ def call(path, params=None, key=None):
             with urllib.request.urlopen(req, timeout=120) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
-            body = e.read().decode("utf-8", "replace")[:500]
+            body = e.read().decode("utf-8", "replace")[:8000]
             if e.code in (429, 500, 502, 503, 504) and i < 4:
                 wait = int(e.headers.get("Retry-After") or 0) or 5 * 2 ** i
                 log(f"HTTP {e.code}, retry in {wait}s"); time.sleep(wait); continue
