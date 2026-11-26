@@ -42,6 +42,8 @@ tr.tot td{font-weight:650}.note{background:var(--warn);padding:7px 11px;border-r
 <h1>OpenAI Ads · pdfFiller</h1><div class="sub" id="sub"></div>
 <div class="bar"><div class="seg" id="per"></div>
   <label class="sub">from <input type="date" id="d1"></label><label class="sub">to <input type="date" id="d2"></label></div>
+<div class="bar"><span class="sub">Compare</span><select id="cm"><option value="prev">Previous period</option><option value="week">Same days a week earlier</option><option value="month">Same days a month earlier</option><option value="year">Same period last year</option><option value="custom">Custom</option></select>
+  <span id="cbox"><label class="sub">from <input type="date" id="c1"></label> <label class="sub">to <input type="date" id="c2"></label></span></div>
 <div class="bar"><div class="seg" id="typ"></div>
   <select id="fc"></select><span class="sub" id="cmp"></span></div>
 <div id="body">
@@ -72,13 +74,19 @@ const TYPES=["Forms","Functions","Other"],TC={"Forms":"var(--forms)","Functions"
 const typeOf=n=>/function/i.test(n)?"Functions":/form/i.test(n)?"Forms":"Other";
 const CT=D.camps.map(typeOf);const usedTypes=TYPES.filter(t=>CT.includes(t));
 const dates=[...new Set(D.c.map(r=>r[0]))].sort();const LAST=D.meta.last_day||dates[dates.length-1];const FIRST=dates[0];
-const st={d1:addD(LAST,-6),d2:LAST,t:"",c:"",sort:["spend",-1],p:"7"};
+const st={d1:addD(LAST,-6),d2:LAST,t:"",c:"",sort:["spend",-1],p:"7",cm:"prev",c1:"",c2:""};
+const addM=(s,n)=>{const d=new Date(s+"T00:00:00Z");d.setUTCMonth(d.getUTCMonth()+n);return d.toISOString().slice(0,10)};
 const z=()=>({imp:0,clk:0,spend:0,conv:0});
 const add=(o,r)=>{o.imp+=r[2];o.clk+=r[3];o.spend+=r[4];o.conv+=r[5];return o};   // r = data row [date, camp, imp, clk, spend, conv]
 const der=o=>({...o,ctr:o.imp?o.clk/o.imp:null,cpc:o.clk?o.spend/o.clk:null,cpa:o.conv?o.spend/o.conv:null,cvr:o.clk?o.conv/o.clk:null});
 const keep=ci=>(st.t===""||CT[ci]===st.t)&&(st.c===""||ci===+st.c);
 const inA=d=>d>=st.d1&&d<=st.d2;
-function prev(){const n=span(st.d1,st.d2);return[addD(st.d1,-n),addD(st.d1,-1)]}
+function prev(){const n=span(st.d1,st.d2);
+  if(st.cm==="week")return[addD(st.d1,-7),addD(st.d2,-7)];
+  if(st.cm==="month")return[addM(st.d1,-1),addM(st.d2,-1)];
+  if(st.cm==="year")return[addM(st.d1,-12),addM(st.d2,-12)];
+  if(st.cm==="custom"&&st.c1&&st.c2)return st.c1<=st.c2?[st.c1,st.c2]:[st.c2,st.c1];
+  return[addD(st.d1,-n),addD(st.d1,-1)]}
 function dl(a,b,lowGood){if(a==null||b==null||!b)return'<span class="d sub">—</span>';const x=a/b-1;const good=lowGood?x<0:x>0;
   return `<span class="d ${lowGood===2||Math.abs(x)<.005?"":good?"up":"dn"}">${x>0?"+":""}${fmt(x*100,1)}%</span>`}
 const KP=[["spend","Spend",usd,2,1],["conv","Conversions (trials)",v=>fmt(v,v%1?1:0),0,1],["cpa","CPA",usd,1,1],["cvr","CVR click→trial",pct,0,1],
@@ -164,12 +172,15 @@ $("per").innerHTML=PER.map(([k,l])=>`<button data-p="${k}">${l}</button>`).join(
 $("typ").innerHTML=[["","All"]].concat(usedTypes.map(t=>[t,t])).map(([k,l])=>`<button data-ty="${k}">${l}</button>`).join("");
 function setP(k){st.p=k;st.d2=LAST;st.d1=k==="mtd"?LAST.slice(0,8)+"01":k==="all"?FIRST:addD(LAST,1-+k);sync()}
 function fillCamps(){$("fc").innerHTML=`<option value="">All campaigns${st.t?" · "+st.t:""}</option>`+D.camps.map((n,i)=>[n,i]).filter(([n,i])=>st.t===""||CT[i]===st.t).map(([n,i])=>`<option value="${i}">${n}</option>`).join("");$("fc").value=st.c}
-function sync(){$("d1").value=st.d1;$("d2").value=st.d2;document.querySelectorAll("[data-p]").forEach(b=>b.classList.toggle("on",b.dataset.p===st.p));
+function sync(){$("d1").value=st.d1;$("d2").value=st.d2;$("cm").value=st.cm;
+  if(st.cm!=="custom"){const[a,b]=prev();st.c1=a;st.c2=b}$("c1").value=st.c1;$("c2").value=st.c2;document.querySelectorAll("[data-p]").forEach(b=>b.classList.toggle("on",b.dataset.p===st.p));
   document.querySelectorAll("[data-ty]").forEach(b=>b.classList.toggle("on",b.dataset.ty===st.t));render()}
 document.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>setP(b.dataset.p));
 document.querySelectorAll("[data-ty]").forEach(b=>b.onclick=()=>{st.t=b.dataset.ty;if(st.c!==""&&st.t!==""&&CT[+st.c]!==st.t)st.c="";fillCamps();sync()});
 $("d1").onchange=e=>{st.d1=e.target.value;st.p="";sync()};$("d2").onchange=e=>{st.d2=e.target.value;st.p="";sync()};
 $("fc").onchange=e=>{st.c=e.target.value;render()};
+$("cm").onchange=e=>{st.cm=e.target.value;sync()};
+$("c1").onchange=e=>{st.c1=e.target.value;st.cm="custom";sync()};$("c2").onchange=e=>{st.c2=e.target.value;st.cm="custom";sync()};
 $("sub").textContent=`Data through ${LAST} · updated ${(D.meta.pulled_at||"").replace("T"," ").slice(0,16)} UTC · account timezone ${D.meta.timezone||"—"} · attribution ${D.meta.attribution||"—"}`;
 fillCamps();setP("7");
 })();
