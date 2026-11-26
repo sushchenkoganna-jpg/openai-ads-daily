@@ -1,50 +1,322 @@
-date,campaign_id,campaign,country,impressions,clicks,spend,conversions
-2026-11-20,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,77.0,6.0,-0.97,0.0
-2026-11-20,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,807.0,17.0,1.57,0.0
-2026-11-20,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,807.0,17.0,1.57,0.0
-2026-11-20,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,60.0,0.0,2.75,0.0
-2026-11-20,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,159.0,12.0,3.68,0.0
-2026-11-20,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,745.0,42.0,71.34,1.0
-2026-11-21,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,215.0,6.0,9.35,0.0
-2026-11-21,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,1413.0,32.0,11.33,0.0
-2026-11-21,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1413.0,32.0,11.33,0.0
-2026-11-21,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,247.0,4.0,-4.03,0.0
-2026-11-21,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,73.0,2.0,-0.23,0.0
-2026-11-21,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,688.0,21.0,12.9,1.0
-2026-11-21,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,332.0,16.0,7.72,1.0
-2026-11-21,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1793.0,68.0,127.49,3.0
-2026-11-22,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,171.0,4.0,10.2,0.0
-2026-11-22,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,6269.0,171.0,63.02,0.0
-2026-11-22,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,6269.0,171.0,63.02,0.0
-2026-11-22,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],LU,6269.0,171.0,63.02,0.0
-2026-11-22,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,135.0,4.0,-4.1,0.0
-2026-11-22,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,78.0,3.0,7.39,0.0
-2026-11-22,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,609.0,20.0,10.86,0.0
-2026-11-22,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,315.0,17.0,8.14,0.0
-2026-11-22,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1774.0,51.0,98.09,1.0
-2026-11-23,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,238.0,3.0,-1.38,0.0
-2026-11-23,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,2175.0,79.0,19.35,0.0
-2026-11-23,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,2175.0,79.0,19.35,0.0
-2026-11-23,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],LU,2175.0,79.0,19.35,0.0
-2026-11-23,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,152.0,4.0,7.7,0.0
-2026-11-23,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,55.0,4.0,-1.96,0.0
-2026-11-23,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,182.0,7.0,3.08,0.0
-2026-11-23,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,312.0,11.0,8.0,0.0
-2026-11-23,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1910.0,64.0,95.71,2.0
-2026-11-24,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,135.0,9.0,23.66,0.0
-2026-11-24,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,1354.0,46.0,10.88,0.0
-2026-11-24,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1354.0,46.0,10.88,0.0
-2026-11-24,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],LU,1354.0,46.0,10.88,0.0
-2026-11-24,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,151.0,4.0,4.54,1.0
-2026-11-24,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,263.0,8.0,0.97,0.0
-2026-11-24,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,300.0,18.0,5.01,0.0
-2026-11-24,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1555.0,43.0,75.25,1.0
-2026-11-25,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,199.0,9.0,9.31,0.0
-2026-11-25,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,4221.0,103.0,21.75,0.0
-2026-11-25,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,4221.0,103.0,21.75,0.0
-2026-11-25,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],LU,4221.0,103.0,21.75,0.0
-2026-11-25,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,382.0,7.0,7.38,0.0
-2026-11-25,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,276.0,17.0,17.84,0.0
-2026-11-25,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,564.0,10.0,5.57,0.0
-2026-11-25,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,349.0,18.0,8.44,0.0
-2026-11-25,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2558.0,81.0,108.27,0.0
+date,campaign_id,campaign,country,conversions
+2026-07-01,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-07-03,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-07-03,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-07-04,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-07-05,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-07-06,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-07-06,cmpn_6a43eb7d29b481a082b27fcbfef7ed52,PDFfiller_Functions_CPC_AU,AU,1.0
+2026-07-08,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,1.0
+2026-07-09,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-07-11,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-07-13,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-07-14,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,1.0
+2026-07-14,cmpn_6a43eb7d29b481a082b27fcbfef7ed52,PDFfiller_Functions_CPC_AU,AU,1.0
+2026-07-16,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,2.0
+2026-07-16,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-07-17,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-07-19,cmpn_6a43eb7d29b481a082b27fcbfef7ed52,PDFfiller_Functions_CPC_AU,AU,1.0
+2026-07-20,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,1.0
+2026-07-21,cmpn_6a43eb7d29b481a082b27fcbfef7ed52,PDFfiller_Functions_CPC_AU,AU,1.0
+2026-07-22,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-07-23,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-07-24,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-07-24,cmpn_6a43eb7d29b481a082b27fcbfef7ed52,PDFfiller_Functions_CPC_AU,AU,1.0
+2026-07-25,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-07-26,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-07-27,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-07-27,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,2.0
+2026-07-28,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-07-28,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,1.0
+2026-07-29,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-07-29,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,1.0
+2026-07-29,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,3.0
+2026-07-29,cmpn_6a43eb7d29b481a082b27fcbfef7ed52,PDFfiller_Functions_CPC_AU,AU,1.0
+2026-07-31,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-07-31,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-08-01,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-08-02,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-08-04,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-08-04,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-08-05,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-08-06,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,2.0
+2026-08-06,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,3.0
+2026-08-07,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-08-07,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-08-09,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,1.0
+2026-08-09,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-08-10,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-08-10,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,4.0
+2026-08-12,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-08-13,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-08-13,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-08-14,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,6.0
+2026-08-15,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,1.0
+2026-08-15,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-08-16,cmpn_6a3461d4cc8c8191a2fa8fa8e7b85111,pdfFiller_Top_Forms_US [cpc],US,1.0
+2026-08-17,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-08-17,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,3.0
+2026-08-17,cmpn_6a43eb7d29b481a082b27fcbfef7ed52,PDFfiller_Functions_CPC_AU,AU,1.0
+2026-08-17,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-08-18,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-08-18,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-08-18,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,4.0
+2026-08-18,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,5.0
+2026-08-19,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-08-19,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-08-20,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-08-20,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-08-20,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-08-20,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,4.0
+2026-08-21,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-08-21,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-08-22,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-08-22,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-08-23,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-08-23,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-08-24,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-08-24,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-08-24,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,4.0
+2026-08-24,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,3.0
+2026-08-25,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-08-25,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-08-25,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-08-25,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-08-26,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-08-26,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,2.0
+2026-08-26,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,3.0
+2026-08-26,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,4.0
+2026-08-27,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-08-27,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-08-27,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-08-28,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-08-28,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-08-29,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-08-29,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-08-30,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,3.0
+2026-08-30,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-08-30,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-08-31,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,3.0
+2026-08-31,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,4.0
+2026-09-01,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,3.0
+2026-09-01,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-09-01,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,2.0
+2026-09-01,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-09-01,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-09-02,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-09-02,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-09-02,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-09-03,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-09-03,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-09-03,cmpn_6a34665b272c8199bf517221ab3814f7,pdfFiller_IRS_Forms_US [cpc],US,1.0
+2026-09-03,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,7.0
+2026-09-04,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,3.0
+2026-09-04,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-09-05,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-09-05,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-09-06,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-09-06,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-09-07,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-09-07,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,6.0
+2026-09-08,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,3.0
+2026-09-08,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-09-08,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-09-09,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,5.0
+2026-09-09,cmpn_6a2a805dc9b881a2b1567ed72ffb8f8b,PDFfiller_Function_CPC_USA,US,1.0
+2026-09-09,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,3.0
+2026-09-09,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-09-10,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,3.0
+2026-09-10,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,4.0
+2026-09-10,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,3.0
+2026-09-10,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-09-11,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-09-11,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,4.0
+2026-09-11,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-09-12,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-09-12,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,4.0
+2026-09-12,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-09-13,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-09-13,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-09-14,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,3.0
+2026-09-14,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,7.0
+2026-09-14,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-09-14,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-09-15,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-09-15,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,3.0
+2026-09-15,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-09-15,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-09-16,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,5.0
+2026-09-16,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,4.0
+2026-09-16,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-09-16,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,4.0
+2026-09-17,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,3.0
+2026-09-17,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-09-17,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,3.0
+2026-09-18,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-09-18,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,2.0
+2026-09-18,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,5.0
+2026-09-19,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-09-20,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-09-20,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,3.0
+2026-09-20,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-09-21,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,6.0
+2026-09-21,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,2.0
+2026-09-21,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-09-21,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-09-22,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-09-22,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,4.0
+2026-09-22,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-09-22,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,4.0
+2026-09-23,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-09-23,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,4.0
+2026-09-23,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,3.0
+2026-09-23,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,4.0
+2026-09-24,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,2.0
+2026-09-24,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-09-24,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,4.0
+2026-09-25,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-09-25,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-09-25,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,9.0
+2026-09-26,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,3.0
+2026-09-26,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-09-26,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-09-27,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-09-27,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-09-28,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-09-28,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,2.0
+2026-09-28,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-09-28,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-09-29,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-09-30,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,4.0
+2026-10-01,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-10-01,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-10-02,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,5.0
+2026-10-02,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-10-03,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-10-03,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-10-03,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-10-04,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,2.0
+2026-10-04,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-10-05,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-10-05,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,4.0
+2026-10-05,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-05,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-10-06,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-10-06,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-10-06,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-10-07,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-10-07,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,1.0
+2026-10-07,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-10-07,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-10-07,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-07,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,4.0
+2026-10-08,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,2.0
+2026-10-08,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,3.0
+2026-10-08,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-10-09,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-10-09,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-09,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,4.0
+2026-10-12,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-10-12,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-10-12,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,6.0
+2026-10-13,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-10-13,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-10-14,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-14,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-10-15,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-10-15,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-10-16,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-10-16,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-10-17,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-10-17,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-10-17,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-18,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-18,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-10-19,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-10-19,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-10-20,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-10-20,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-10-20,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-10-21,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,3.0
+2026-10-21,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-10-22,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,4.0
+2026-10-22,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,5.0
+2026-10-23,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,1.0
+2026-10-23,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-23,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-10-24,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-10-25,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-25,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-10-26,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-10-27,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-10-28,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-28,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-10-29,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-29,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-10-30,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-10-30,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-10-31,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-10-31,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-10-31,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-11-01,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-11-01,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-11-02,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-11-02,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,1.0
+2026-11-02,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-11-02,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,1.0
+2026-11-02,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-11-02,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-11-03,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-11-04,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,1.0
+2026-11-04,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-11-05,cmpn_2a9334bcb1b08193820ddd0c0f6236ac,pdfFiller_All_Forms_AU [Conversion Autobid][Desktop],AU,1.0
+2026-11-05,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-11-05,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-11-06,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,3.0
+2026-11-06,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,1.0
+2026-11-06,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-11-07,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-11-08,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,1.0
+2026-11-08,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-11-08,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-11-09,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-11-09,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-11-09,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,1.0
+2026-11-09,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-11-10,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-11-10,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,4.0
+2026-11-11,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,2.0
+2026-11-11,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-11-11,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-11-11,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-11-12,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-11-12,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,1.0
+2026-11-12,cmpn_2758608e2248819ea97574f6dc285d96,pdfFiller_All_Forms_AU [CPA][Desktop],AU,1.0
+2026-11-12,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,1.0
+2026-11-13,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-11-13,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-11-14,cmpn_0c3633c6d270819cbb043cf8e432b2ed,pdfFiller_IRS_Forms_US [CPA][Desktop],US,1.0
+2026-11-16,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-11-16,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,2.0
+2026-11-16,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-11-17,cmpn_6e6fdc81326c81a2929cb00f3ab2638f,pdfFiller_All_Forms_US [CPA][Desktop],US,1.0
+2026-11-17,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-11-18,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,1.0
+2026-11-18,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,1.0
+2026-11-18,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-11-18,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-11-19,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],BE,1.0
+2026-11-19,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,2.0
+2026-11-19,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-11-20,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-11-20,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-11-21,cmpn_e0a196853f3c81959ad717cfa3c6b040,PDFfiller_Function_AU[CPA][Web],AU,1.0
+2026-11-21,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-11-21,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,3.0
+2026-11-22,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
+2026-11-23,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-11-24,cmpn_26fdd5c21fc481948c4d5d0742fd7a64,pdfFiller_All_Forms_CA [CPA][Desktop],CA,1.0
+2026-11-24,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,2.0
+2026-11-25,cmpn_2026c70f17f881a3924d1af765e2751c,PDFfiller_Function_FR[manualCPA][Desktop],FR,2.0
+2026-11-25,cmpn_eacdf51080bc819fa1c98cea0b23fef7,pdfFiller_Top_Forms_US [CPA][Desktop],US,1.0
+2026-11-25,cmpn_fe84ae4436c081948fdd04a44e5ff751,PDFfiller_Function_US[manualCPA][Desktop],US,1.0
