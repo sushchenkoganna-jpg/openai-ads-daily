@@ -45,7 +45,9 @@ tr.tot td{font-weight:600}.note{background:var(--warn);padding:6px 10px;border-r
 <div class="card"><h2>Конверсії по країнах <button data-t="tk">CSV</button></h2><div class="sub">OpenAI віддає по країнах лише конверсії; spend і кліки по країнах API не розбиває.</div><div class="tw" id="tk"></div></div>
 </main>
 <script>
-const D=/*__DATA__*/null;
+let D=/*__DATA__*/null;
+(async()=>{
+if(!D){try{D=await (await fetch('/__fn/data')).json()}catch(e){document.querySelector('main').innerHTML='<p>Не вдалося завантажити дані: '+e+'</p>';return}}
 const $=s=>document.getElementById(s);
 const fmt=(v,d=0)=>v==null||!isFinite(v)?"—":v.toLocaleString("uk-UA",{minimumFractionDigits:d,maximumFractionDigits:d});
 const usd=v=>v==null||!isFinite(v)?"—":"$"+fmt(v,v<100?2:0);
@@ -137,5 +139,6 @@ $("d1").onchange=e=>{st.d1=e.target.value;st.p="";sync()};$("d2").onchange=e=>{s
 $("fc").innerHTML+=D.camps.map((n,i)=>`<option value="${i}">${n}</option>`).join("");$("fc").onchange=e=>{st.c=e.target.value;render()};
 $("sub").textContent=`Дані по ${LAST} · оновлено ${(D.meta.pulled_at||"").replace("T"," ").slice(0,16)} UTC · таймзона ${D.meta.timezone||"—"} · атрибуція ${D.meta.attribution||"—"} · Conversions = тріали`;
 setP("7");
+})();
 </script>
 </body></html>

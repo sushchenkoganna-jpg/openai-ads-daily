@@ -26,6 +26,8 @@ def main():
             "camps": names, "ctry": codes,
             "c": [[r["date"], ci[r["campaign"]]] + [n(r[m]) for m in MET] for r in camp],
             "k": [[r["date"], ci[r["campaign"]], ki[r["country"]], n(r["conversions"])] for r in ctry]}
+    with open(os.path.join(HERE, "dashboard", "data.json"), "w", encoding="utf-8") as f:   # read by the Factum app
+        json.dump(data, f, separators=(",", ":"), ensure_ascii=False)
     tpl = open(os.path.join(HERE, "dashboard", "template.html"), encoding="utf-8").read()
     html = tpl.replace("/*__DATA__*/null", json.dumps(data, separators=(",", ":"), ensure_ascii=False))
     with open(os.path.join(HERE, "dashboard", "index.html"), "w", encoding="utf-8") as f: f.write(html)

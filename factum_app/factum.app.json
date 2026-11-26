@@ -1,0 +1,9 @@
+{
+  "collections": [{"name": "gh", "kind": "cache"}],
+  "connections": [
+    {"host": "api.github.com", "auth": "bearer", "methods": ["GET"],
+     "paths": "/repos/sushchenkoganna-jpg/openai-ads-daily/contents/**", "scopes": ["handler"],
+     "why": "dashboard/data.json, rebuilt daily by the repository's GitHub Action"}
+  ],
+  "handlers": [{"name": "data", "file": "handlers/data.js", "as": "app", "connection": "api.github.com", "cache": "gh", "methods": ["GET"]}]
+}
