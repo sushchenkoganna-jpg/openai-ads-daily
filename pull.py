@@ -26,7 +26,7 @@ def log(*a): print(*a, file=sys.stderr, flush=True)
 def call(path, params=None, key=None):
     url = API + path + ("?" + urllib.parse.urlencode(params, doseq=True) if params else "")
     for i in range(5):
-        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {key}", "Accept": "application/json"})
+        req = urllib.request.Request(url, headers={"Authorization": f"Bearer {key}", "Accept": "application/json", "User-Agent": "openai-ads-daily/1.0 (+curl compatible)"})
         try:
             with urllib.request.urlopen(req, timeout=120) as r:
                 return json.load(r)
