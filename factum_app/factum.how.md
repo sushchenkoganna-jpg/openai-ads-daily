@@ -1,9 +1,9 @@
 ---
 sources:
 - ref: https://developers.openai.com/ads/reporting
-  title: OpenAI Ads Advertiser API — insights and conversions/insights
+  title: "OpenAI Ads Advertiser API — insights and conversions/insights"
 - ref: https://github.com/sushchenkoganna-jpg/openai-ads-daily
-  title: the pipeline (private): pull.py, build_dash.py, GitHub Action
+  title: "the pipeline (private): pull.py, build_dash.py, GitHub Action"
 ---
 OpenAI Ads (ChatGPT ads) daily dashboard. A GitHub Action pulls the last 7 days from the OpenAI Ads API every day at
 04:30 UTC (campaign x day: impressions, clicks, spend, conversions; conversions by country from /conversions/insights,
