@@ -56,7 +56,7 @@ def rows_of(resp):
 
 def get(r, *paths):
     """First non-empty value among dotted paths, flat ("a.b") or nested ({"a": {"b"}})."""
-    for p in paths:
+    for p in [x for q in paths for x in (q, q.replace(".", "_"))]:
         if p in r and r[p] not in (None, ""): v = r[p]
         else:
             v = r
@@ -68,7 +68,7 @@ def get(r, *paths):
 
 
 def sample(tag, rows):
-    if rows: log(f"{tag}: {len(rows)} rows; first: {json.dumps(rows[0])[:700]}")
+    if rows: log(f"{tag}: {len(rows)} rows; first: {json.dumps({k: v for k, v in rows[0].items() if k != 'id'})[:900]}")
 
 
 def paged(path, params, key):
