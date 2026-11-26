@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OpenAI Ads daily</title>
 <style>
-:root{--bg:#f6f6f3;--card:#fff;--fg:#1c1c1a;--mut:#6c6c66;--line:#e5e4de;--forms:#2f6fdb;--func:#16a085;--oth:#9a9a94;--good:#1a8f4c;--bad:#c8372d;--warn:#fbf3e2}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#141413;--card:#1e1e1c;--fg:#ededea;--mut:#9c9c96;--line:#32322e;--forms:#6b9cf0;--func:#3cc7a6;--oth:#77776f;--good:#4cc27e;--bad:#ef6b61;--warn:#352f22}}
-:root[data-theme=dark]{--bg:#141413;--card:#1e1e1c;--fg:#ededea;--mut:#9c9c96;--line:#32322e;--forms:#6b9cf0;--func:#3cc7a6;--oth:#77776f;--good:#4cc27e;--bad:#ef6b61;--warn:#352f22}
+:root{color-scheme:light;--bg:#f6f6f3;--card:#fff;--fg:#1c1c1a;--mut:#6c6c66;--line:#e5e4de;--forms:#2f6fdb;--func:#16a085;--oth:#9a9a94;--good:#1a8f4c;--bad:#c8372d;--warn:#fbf3e2}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;--bg:#141413;--card:#1e1e1c;--fg:#ededea;--mut:#9c9c96;--line:#32322e;--forms:#6b9cf0;--func:#3cc7a6;--oth:#77776f;--good:#4cc27e;--bad:#ef6b61;--warn:#352f22}}
+:root[data-theme=dark]{color-scheme:dark;--bg:#141413;--card:#1e1e1c;--fg:#ededea;--mut:#9c9c96;--line:#32322e;--forms:#6b9cf0;--func:#3cc7a6;--oth:#77776f;--good:#4cc27e;--bad:#ef6b61;--warn:#352f22}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
 main{max-width:1240px;margin:0 auto;padding:22px 16px 56px}
 h1{font-size:22px;margin:0}.sub{color:var(--mut);font-size:12px}
@@ -39,7 +39,8 @@ tr.tot td{font-weight:650}.note{background:var(--warn);padding:7px 11px;border-r
 </style>
 </head>
 <body><main>
-<h1>OpenAI Ads · pdfFiller</h1><div class="sub" id="sub"></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap"><div><h1>OpenAI Ads · pdfFiller</h1><div class="sub" id="sub"></div></div>
+<div class="seg" id="theme"><button data-th="auto">Auto</button><button data-th="light">Light</button><button data-th="dark">Dark</button></div></div>
 <div class="bar"><div class="seg" id="per"></div>
   <label class="sub">from <input type="date" id="d1"></label><label class="sub">to <input type="date" id="d2"></label></div>
 <div class="bar"><span class="sub">Compare</span><select id="cm"><option value="prev">Previous period</option><option value="week">Same days a week earlier</option><option value="month">Same days a month earlier</option><option value="year">Same period last year</option><option value="custom">Custom</option></select>
@@ -60,6 +61,10 @@ tr.tot td{font-weight:650}.note{background:var(--warn);padding:7px 11px;border-r
 </div>
 </main>
 <script>
+(()=>{const set=t=>{if(t==="auto")document.documentElement.removeAttribute("data-theme");else document.documentElement.setAttribute("data-theme",t);
+  document.querySelectorAll("[data-th]").forEach(b=>b.classList.toggle("on",b.dataset.th===t));try{localStorage.setItem("theme",t)}catch(e){}};
+  let t="auto";try{t=localStorage.getItem("theme")||"auto"}catch(e){}set(t);
+  document.querySelectorAll("[data-th]").forEach(b=>b.onclick=()=>set(b.dataset.th))})();
 let D=/*__DATA__*/null;
 (async()=>{
 const $=s=>document.getElementById(s);
