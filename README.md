@@ -4,7 +4,7 @@ Daily OpenAI Ads (ChatGPT ads) export → CSV in this repo → Google Sheet → 
 Runs in GitHub Actions: no local machine, no Claude (zero tokens), 2 API calls a day.
 
 ```
-GitHub Actions 04:30 UTC
+GitHub Actions 09:00 UTC (after the account day ends in Los Angeles)
   pull.py        GET /v1/ad_account/insights (campaign × day); conversions by country (/conversions/insights);
                  the last 7 days are rewritten (conversions mature)
   build_dash.py  data/*.csv → dashboard/data.json + dashboard/index.html

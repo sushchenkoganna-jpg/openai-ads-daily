@@ -3,7 +3,7 @@ name: OpenAI Ads daily
 # Factum serves dashboard/index.html live from this repository, so the commit is the update.
 on:
   schedule:
-    - cron: "30 4 * * *"          # 06:30/07:30 Kyiv
+    - cron: "0 9 * * *"           # 11:00 Kyiv (12:00 summer): the account day (America/Los_Angeles) ends 08:00 UTC
   workflow_dispatch:
     inputs:
       since: { description: "Backfill from YYYY-MM-DD (empty = last 7 days)", default: "" }
