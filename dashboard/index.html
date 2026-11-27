@@ -55,7 +55,7 @@ tr.tot td{font-weight:650}.note{background:var(--warn);padding:7px 11px;border-r
   <div class="card"><h2>Daily spend <span class="lg" id="lg1"></span></h2><div id="ch1"></div></div>
   <div class="card"><h2>Daily conversions <span class="lg" id="lg2"></span></h2><div id="ch2"></div></div>
 </div>
-<div class="card"><h2>CPA, rolling 7 days <span class="lg" id="lg3"></span></h2><div id="ch3"></div></div>
+<div class="card"><h2><span>CPA · <span id="t3"></span><div class="sub" style="font-size:12px;font-weight:400">each point = spend / conversions over the 7 days ending that day</div></span><span class="lg" id="lg3"></span></h2><div id="ch3"></div></div>
 <div class="card"><h2>Campaigns <button data-t="tc">CSV</button></h2><div class="tw" id="tc"></div></div>
 <div class="card"><h2>Conversions by country <button data-t="tk">CSV</button></h2><div class="sub" style="margin:-4px 0 8px">OpenAI reports only conversions by country; the API does not split spend or clicks by country.</div><div class="tw" id="tk"></div></div>
 </div>
@@ -154,7 +154,7 @@ function cpaChart(){
     const flush=()=>{if(seg.length)s+=`<polyline ${st_} points="${seg.join(" ")}"/>`;seg=[]};
     vals[k].forEach((v,i)=>{if(v==null)return flush();seg.push(`${x(i)},${y(v)}`);s+=`<circle cx="${x(i)}" cy="${y(v)}" r="${n<=31?3:0}" fill="${l.c}"/><circle cx="${x(i)}" cy="${y(v)}" r="7" fill="transparent"><title>${S.days[i]} · ${l.t}: CPA 7d ${usd(v)}</title></circle>`});flush()});
   S.days.forEach((d,i)=>{s+=dlab(S,i,Math.ceil(n/14),W,L,w,H)});
-  $("ch3").innerHTML=s+"</svg>";$("lg3").innerHTML=lines.map(l=>`<span><i style="background:${l.c}"></i>${l.t}</span>`).join("")+`<span><i style="background:${PC}"></i>${ts.length>1?"Total, compare":"Compare"} ${p1} – ${p2}</span>`;
+  $("ch3").innerHTML=s+"</svg>";$("t3").textContent=`${st.d1} – ${st.d2}`;$("lg3").innerHTML=lines.map(l=>`<span><i style="background:${l.c}"></i>${l.t}</span>`).join("")+`<span><i style="background:${PC}"></i>${ts.length>1?"Total, compare":"Compare"} ${p1} – ${p2}</span>`;
 }
 function charts(){bars("ch1","lg1","spend",v=>"$"+fmt(v));bars("ch2","lg2","conv",v=>fmt(v));cpaChart()}
 const COLS=[["type","Type"],["spend","Spend",usd],["dspend","Δ spend",null,2],["conv","Conv",v=>fmt(v,v%1?1:0)],["dconv","Δ conv",null,0],["cpa","CPA",usd],["dcpa","Δ CPA",null,1],
