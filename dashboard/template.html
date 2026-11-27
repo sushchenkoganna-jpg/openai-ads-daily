@@ -118,35 +118,43 @@ function types(g){
   $("tt").innerHTML=`<table><tr><th>Type</th><th>Spend</th><th>Spend share</th><th>Δ spend</th><th>Conv</th><th>Δ conv</th><th>CPA</th><th>Δ CPA</th><th>CTR</th><th>CVR</th><th>CPC</th></tr>`+
     rows.map(({t,a,b})=>row(t,a,b,tot?a.spend/tot:0,TC[t])).join("")+row("Total",g.A,g.B,null,null)+"</table>";
 }
-function series(){
-  const end=st.d2,start=span(st.d1,st.d2)>=45?st.d1:addD(end,-44),days=[];for(let d=start;d<=end;d=addD(d,1))days.push(d);
-  const by={};for(const r of D.c){if(!keep(r[1])||r[0]<addD(start,-6)||r[0]>end)continue;const k=r[0]+"|"+CT[r[1]];add(by[k]||(by[k]=z()),r)}
+function series(a,b){   // days a..b, plus 6 days before a for the rolling CPA
+  const days=[];for(let d=a;d<=b;d=addD(d,1))days.push(d);
+  const by={};for(const r of D.c){if(!keep(r[1])||r[0]<addD(a,-6)||r[0]>b)continue;const k=r[0]+"|"+CT[r[1]];add(by[k]||(by[k]=z()),r)}
   return{days,get:(d,t)=>by[d+"|"+t]||z()}}
+const PC="var(--mut)";
+function prevLine(vals,P,lab,f,x,y){   // comparison period, aligned day by day with the selected one
+  let s="",seg=[];const flush=()=>{if(seg.length>1)s+=`<polyline fill="none" stroke="${PC}" stroke-width="2" stroke-dasharray="4 3" points="${seg.join(" ")}"/>`;seg=[]};
+  vals.forEach((v,i)=>{if(v==null)return flush();seg.push(`${x(i)},${y(v)}`);s+=`<circle cx="${x(i)}" cy="${y(v)}" r="2.5" fill="${PC}"/><circle cx="${x(i)}" cy="${y(v)}" r="7" fill="transparent"><title>${P.days[i]} · ${lab}: ${f(v)}</title></circle>`});flush();return s}
 function axis(W,H,L,R,T,B,max,f){let s="";for(let g=0;g<=4;g++){const v=max*g/4,y=T+(H-T-B)*(1-g/4);
   s+=`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}" stroke="var(--line)"/><text x="${L-6}" y="${y+4}" text-anchor="end">${f(v)}</text>`}return s}
 function nice(m){if(m<=0)return 1;const p=Math.pow(10,Math.floor(Math.log10(m))),n=m/p;return(n<=1?1:n<=2?2:n<=5?5:10)*p}
 const shownTypes=()=>usedTypes.filter(t=>st.t===""||t===st.t);
 const dlab=(S,i,every,W,L,w,H)=>i%every===0?`<text x="${L+w*i+w/2}" y="${H-8}" text-anchor="middle">${S.days[i].slice(8)}.${S.days[i].slice(5,7)}</text>`:"";
 function bars(id,lgId,key,f){
-  const S=series(),W=600,H=240,L=52,R=10,T=10,B=26,w=(W-L-R)/S.days.length,ts=shownTypes();
-  const tot=S.days.map(d=>ts.reduce((s,t)=>s+S.get(d,t)[key],0)),mx=nice(Math.max(...tot)),y=v=>T+(H-T-B)*(1-v/mx);
+  const[p1,p2]=prev(),S=series(st.d1,st.d2),P=series(p1,p2),n=S.days.length,W=600,H=240,L=52,R=10,T=10,B=26,w=(W-L-R)/n,ts=shownTypes();
+  const sum=(X,d)=>ts.reduce((s,t)=>s+X.get(d,t)[key],0);
+  const tot=S.days.map(d=>sum(S,d)),pv=S.days.map((_,i)=>P.days[i]?sum(P,P.days[i]):null);
+  const mx=nice(Math.max(0,...tot,...pv.filter(v=>v!=null))),y=v=>T+(H-T-B)*(1-v/mx),x=i=>L+w*i+w/2;
   let s=`<svg viewBox="0 0 ${W} ${H}">`+axis(W,H,L,R,T,B,mx,f);
   S.days.forEach((d,i)=>{let acc=0;const inc=d>=addD(LAST,-1);for(const t of ts){const v=S.get(d,t)[key];if(!v)continue;
     s+=`<rect x="${L+w*i+w*.12}" y="${y(acc+v)}" width="${w*.76}" height="${y(acc)-y(acc+v)}" fill="${TC[t]}" opacity="${inc?.45:.9}"><title>${d} · ${t}: ${f(v)}</title></rect>`;acc+=v}
-    s+=dlab(S,i,Math.ceil(S.days.length/8),W,L,w,H)});
-  $(id).innerHTML=s+"</svg>";$(lgId).innerHTML=ts.map(t=>`<span><i style="background:${TC[t]}"></i>${t}</span>`).join("");
+    s+=dlab(S,i,Math.ceil(n/8),W,L,w,H)});
+  s+=prevLine(pv,P,"compare",f,x,y);
+  $(id).innerHTML=s+"</svg>";$(lgId).innerHTML=ts.map(t=>`<span><i style="background:${TC[t]}"></i>${t}</span>`).join("")+`<span><i style="background:${PC}"></i>Compare ${p1} – ${p2}</span>`;
 }
 function cpaChart(){
-  const S=series(),W=1200,H=240,L=52,R=10,T=10,B=26,w=(W-L-R)/S.days.length,ts=shownTypes();
+  const[p1,p2]=prev(),S=series(st.d1,st.d2),P=series(p1,p2),n=S.days.length,W=1200,H=240,L=52,R=10,T=10,B=26,w=(W-L-R)/n,ts=shownTypes();
   const lines=ts.map(t=>({t,c:TC[t],set:[t]}));if(ts.length>1)lines.push({t:"Total",c:"var(--fg)",set:ts});
-  const roll=(d,set)=>{let sp=0,cv=0;for(let j=0;j<7;j++)for(const x of set){const v=S.get(addD(d,-j),x);sp+=v.spend;cv+=v.conv}return cv?sp/cv:null};
-  const vals=lines.map(l=>S.days.map(d=>roll(d,l.set))),mx=nice(Math.max(1,...vals.flat().filter(v=>v!=null))),y=v=>T+(H-T-B)*(1-v/mx);
-  let s=`<svg viewBox="0 0 ${W} ${H}">`+axis(W,H,L,R,T,B,mx,usd);
-  lines.forEach((l,k)=>{const st_=`fill="none" stroke="${l.c}" stroke-width="${l.t==="Total"?2.5:2}"${l.t==="Total"?' stroke-dasharray="5 4"':""}`;let seg=[];
+  const roll=(X,d,set)=>{let sp=0,cv=0;for(let j=0;j<7;j++)for(const t of set){const v=X.get(addD(d,-j),t);sp+=v.spend;cv+=v.conv}return cv?sp/cv:null};
+  const vals=lines.map(l=>S.days.map(d=>roll(S,d,l.set))),pv=S.days.map((_,i)=>P.days[i]?roll(P,P.days[i],ts):null);
+  const mx=nice(Math.max(1,...vals.flat().filter(v=>v!=null),...pv.filter(v=>v!=null))),y=v=>T+(H-T-B)*(1-v/mx),x=i=>L+w*i+w/2;
+  let s=`<svg viewBox="0 0 ${W} ${H}">`+axis(W,H,L,R,T,B,mx,usd)+prevLine(pv,P,"compare CPA 7d",usd,x,y);
+  lines.forEach((l,k)=>{const st_=`fill="none" stroke="${l.c}" stroke-width="${l.t==="Total"?2.5:2}"`;let seg=[];
     const flush=()=>{if(seg.length)s+=`<polyline ${st_} points="${seg.join(" ")}"/>`;seg=[]};
-    vals[k].forEach((v,i)=>{if(v==null)return flush();seg.push(`${L+w*i+w/2},${y(v)}`);s+=`<circle cx="${L+w*i+w/2}" cy="${y(v)}" r="7" fill="transparent"><title>${S.days[i]} · ${l.t}: CPA 7d ${usd(v)}</title></circle>`});flush()});
-  S.days.forEach((d,i)=>{s+=dlab(S,i,Math.ceil(S.days.length/14),W,L,w,H)});
-  $("ch3").innerHTML=s+"</svg>";$("lg3").innerHTML=lines.map(l=>`<span><i style="background:${l.c}"></i>${l.t}</span>`).join("");
+    vals[k].forEach((v,i)=>{if(v==null)return flush();seg.push(`${x(i)},${y(v)}`);s+=`<circle cx="${x(i)}" cy="${y(v)}" r="${n<=31?3:0}" fill="${l.c}"/><circle cx="${x(i)}" cy="${y(v)}" r="7" fill="transparent"><title>${S.days[i]} · ${l.t}: CPA 7d ${usd(v)}</title></circle>`});flush()});
+  S.days.forEach((d,i)=>{s+=dlab(S,i,Math.ceil(n/14),W,L,w,H)});
+  $("ch3").innerHTML=s+"</svg>";$("lg3").innerHTML=lines.map(l=>`<span><i style="background:${l.c}"></i>${l.t}</span>`).join("")+`<span><i style="background:${PC}"></i>${ts.length>1?"Total, compare":"Compare"} ${p1} – ${p2}</span>`;
 }
 function charts(){bars("ch1","lg1","spend",v=>"$"+fmt(v));bars("ch2","lg2","conv",v=>fmt(v));cpaChart()}
 const COLS=[["type","Type"],["spend","Spend",usd],["dspend","Δ spend",null,2],["conv","Conv",v=>fmt(v,v%1?1:0)],["dconv","Δ conv",null,0],["cpa","CPA",usd],["dcpa","Δ CPA",null,1],
